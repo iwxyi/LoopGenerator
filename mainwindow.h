@@ -14,7 +14,7 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    ~MainWindow() override;
 
 public:
     QString generalLoopText(const QString& controller, const QString& templater);
@@ -24,6 +24,10 @@ private slots:
     void on_generalButton_clicked();
 
     void on_copyButton_clicked();
+
+protected:
+    void showEvent(QShowEvent* e) override;
+    void closeEvent(QCloseEvent* e) override;
 
 private:
     Ui::MainWindow *ui;

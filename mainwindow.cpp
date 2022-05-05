@@ -88,3 +88,17 @@ void MainWindow::on_copyButton_clicked()
 {
     QApplication::clipboard()->setText(ui->resultEdit->toPlainText());
 }
+
+void MainWindow::showEvent(QShowEvent *e)
+{
+    QMainWindow::showEvent(e);
+    this->restoreState(settings.value("windows/state").toByteArray());
+    this->restoreGeometry(settings.value("windows/geometry").toByteArray());
+}
+
+void MainWindow::closeEvent(QCloseEvent *e)
+{
+    settings.setValue("windows/state", this->saveState());
+    settings.setValue("windows/geometry", this->saveGeometry());
+    QMainWindow::closeEvent(e);
+}

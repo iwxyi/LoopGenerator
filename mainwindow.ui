@@ -14,7 +14,7 @@
    <string>循环生成器</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1,0,3,0,5">
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1,0,1,0,5">
     <item>
      <widget class="QLabel" name="label">
       <property name="text">
